@@ -31,9 +31,9 @@ module.exports = {
             async: true,
             minChunks: 2
         })
-        // new webpack.optimize.AggressiveSplittingPlugin({
-        //     minSize: 1000,
-        //     maxSize: 30000
-        // })
+        new webpack.optimize.AggressiveSplittingPlugin({
+            minSize: 10000,
+            maxSize: 30000
+        })
     ]
 };
