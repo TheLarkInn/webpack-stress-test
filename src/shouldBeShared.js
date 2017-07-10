@@ -1,0 +1,1 @@
+export default "make me into shared chunk"
