@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MultipageWebpackPlugin = require("multipage-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -30,10 +31,11 @@ module.exports = {
             names: "main",
             async: true,
             minChunks: 2
-        })
+        }),
         new webpack.optimize.AggressiveSplittingPlugin({
             minSize: 10000,
             maxSize: 30000
-        })
+        }),
+        new MultipageWebpackPlugin()
     ]
 };
